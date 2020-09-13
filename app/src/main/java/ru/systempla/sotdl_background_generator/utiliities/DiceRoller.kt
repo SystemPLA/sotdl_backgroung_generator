@@ -1,7 +1,8 @@
 package ru.systempla.sotdl_background_generator.utiliities
 
 class DiceRoller {
-    companion object{
+    companion object Static{
+
         fun roll(type: Int, count: Int = 1) : Int {
             var sum = 0
             for (i in 1..count) {
@@ -9,5 +10,6 @@ class DiceRoller {
             }
             return sum
         }
+
     }
 }
