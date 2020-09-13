@@ -1,4 +1,4 @@
-package ru.systempla.sotdl_backgroung_generator
+package ru.systempla.sotdl_background_generator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

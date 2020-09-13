@@ -1,4 +1,4 @@
-package ru.systempla.sotdl_backgroung_generator
+package ru.systempla.sotdl_background_generator
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,1 +1,1 @@
-# sotdl_backgroung_generator
+# sotdl_background_generator
