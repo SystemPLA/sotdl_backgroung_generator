@@ -5,6 +5,7 @@ import ru.systempla.sotdl_background_generator.utiliities.ChildrenCounter
 import ru.systempla.sotdl_background_generator.utiliities.DiceRoller
 
 class HumanBackgroundGenerationTable : GenerationTable {
+    override var name = "Background"
     override var usedDie = IntArray(2) {1;20}
     override fun generateProperty(inputParameter: Int): String {
         return when (inputParameter) {
