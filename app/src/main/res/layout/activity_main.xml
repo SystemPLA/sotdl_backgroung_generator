@@ -35,13 +35,6 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/ch_bt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Choose" />
-
-        <Button
             android:id="@+id/ge_bt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

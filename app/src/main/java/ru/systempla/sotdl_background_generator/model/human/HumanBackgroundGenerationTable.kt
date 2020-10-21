@@ -6,7 +6,7 @@ import ru.systempla.sotdl_background_generator.utiliities.DiceRoller
 
 class HumanBackgroundGenerationTable : GenerationTable {
     override var name = "Background"
-    override var usedDie = IntArray(2) {1;20}
+    override var usedDie = intArrayOf(1,20)
     override fun generateProperty(inputParameter: Int): String {
         return when (inputParameter) {
             1 -> "You died and returned to life. You start the game with 1d6 Insanity."

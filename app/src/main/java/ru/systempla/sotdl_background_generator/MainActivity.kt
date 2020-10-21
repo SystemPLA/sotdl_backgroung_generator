@@ -19,5 +19,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.getCharacterDesc().observe(this, {
             data -> editTextTextMultiLine.setText(data)
         })
+
+        ge_bt.setOnClickListener { mainViewModel.generateCharacter("Human") }
     }
 }

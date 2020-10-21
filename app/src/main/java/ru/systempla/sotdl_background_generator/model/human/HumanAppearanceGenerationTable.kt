@@ -4,7 +4,7 @@ import ru.systempla.sotdl_background_generator.model.GenerationTable
 
 class HumanAppearanceGenerationTable : GenerationTable {
     override var name = "Appearance"
-    override var usedDie = IntArray(2) {3;6}
+    override var usedDie = intArrayOf(3,6)
     override fun generateProperty(inputParameter: Int): String {
         return when (inputParameter) {
             3 -> "You are hideous. You look like a monster. Children cry when they encounter you, the weak of heart faint when they see you, and one person vomited after getting a good look at your face."

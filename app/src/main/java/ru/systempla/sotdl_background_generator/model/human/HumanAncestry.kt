@@ -1,5 +1,6 @@
 package ru.systempla.sotdl_background_generator.model.human
 
+import android.util.Log
 import ru.systempla.sotdl_background_generator.model.Ancestry
 import ru.systempla.sotdl_background_generator.model.GenerationTable
 import ru.systempla.sotdl_background_generator.utiliities.DiceRoller
@@ -17,10 +18,11 @@ class HumanAncestry private constructor(private var name : String = "-", private
         var name: String = ""
 
         fun newFeature(featureGenerationTable : GenerationTable) : Builder {
+            Log.d("DIE","${featureGenerationTable.usedDie[1]} ${featureGenerationTable.usedDie[0]}")
             features[featureGenerationTable.name] =
                 featureGenerationTable.generateProperty(DiceRoller.roll(
-                    featureGenerationTable.usedDie[0],
-                    featureGenerationTable.usedDie[1]
+                    featureGenerationTable.usedDie[1],
+                    featureGenerationTable.usedDie[0]
                 )
             )
             return this

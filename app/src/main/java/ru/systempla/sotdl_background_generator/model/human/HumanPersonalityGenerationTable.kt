@@ -4,7 +4,7 @@ import ru.systempla.sotdl_background_generator.model.GenerationTable
 
 class HumanPersonalityGenerationTable : GenerationTable {
     override var name = "Personality"
-    override var usedDie = IntArray(2) {3;6}
+    override var usedDie = intArrayOf(3,6)
     override fun generateProperty(inputParameter: Int): String {
         return when (inputParameter) {
             3 -> "You are cruel, wicked, and self-serving. You enjoy making others suffer."

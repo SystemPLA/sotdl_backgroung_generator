@@ -6,7 +6,7 @@ class ChildrenCounter {
     companion object Static {
         fun countChildren (baseNumber:Int, excludeNumber:Int) : Int {
             return if (baseNumber<=abs(excludeNumber)) 0
-            else baseNumber-excludeNumber
+            else baseNumber+excludeNumber
         }
     }
 }

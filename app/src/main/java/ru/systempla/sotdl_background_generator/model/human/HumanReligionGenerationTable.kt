@@ -4,7 +4,7 @@ import ru.systempla.sotdl_background_generator.model.GenerationTable
 
 class HumanReligionGenerationTable : GenerationTable {
     override var name = "Religion"
-    override var usedDie = IntArray(2) {3;6}
+    override var usedDie = intArrayOf(3,6)
     override fun generateProperty(inputParameter: Int): String {
         return when (inputParameter) {
             3 -> "You belong to a cult dedicated to a dark power."

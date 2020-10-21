@@ -3,25 +3,26 @@ package ru.systempla.sotdl_background_generator.view_model
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import ru.systempla.sotdl_background_generator.model.Ancestry
 import ru.systempla.sotdl_background_generator.model.factories.FactoryGenerator
 import ru.systempla.sotdl_background_generator.model.human.HumanAncestry
 
 class MainViewModel : ViewModel() {
-    private val characterDesc: MutableLiveData<String> by lazy {
-        MutableLiveData().also {
-            loadCharacterDesc()
-        }
-    }
+    private val characterDesc = MutableLiveData<String>()
 
-    lateinit var character : Ancestry
+    private lateinit var character : Ancestry
 
     fun getCharacterDesc(): LiveData<String>{
         return characterDesc
     }
 
     private fun loadCharacterDesc() {
-        
+        CoroutineScope(Dispatchers.Main).launch() {
+            characterDesc.value = character.toString()
+        }
     }
 
     fun generateCharacter(ancestryString : String){
@@ -29,6 +30,7 @@ class MainViewModel : ViewModel() {
             "Human" -> generateHuman()
             else -> {}
         }
+        loadCharacterDesc()
     }
 
     private fun generateHuman() {
