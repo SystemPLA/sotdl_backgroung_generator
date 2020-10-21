@@ -3,6 +3,7 @@ package ru.systempla.sotdl_background_generator.model.human
 import ru.systempla.sotdl_background_generator.model.Ancestry
 import ru.systempla.sotdl_background_generator.model.GenerationTable
 import ru.systempla.sotdl_background_generator.utiliities.DiceRoller
+import java.lang.StringBuilder
 
 class HumanAncestry private constructor(private var name : String = "-", private val features: Map<String, String>): Ancestry() {
 
@@ -31,5 +32,14 @@ class HumanAncestry private constructor(private var name : String = "-", private
         }
 
         fun create(): HumanAncestry = HumanAncestry(this)
+    }
+
+    override fun toString():String {
+        var result: StringBuilder = StringBuilder()
+        result.append("Name: $name \n")
+        for (i in featuresMap) {
+            result.append("${i.key}: ${i.value} \n")
+        }
+        return result.toString()
     }
 }

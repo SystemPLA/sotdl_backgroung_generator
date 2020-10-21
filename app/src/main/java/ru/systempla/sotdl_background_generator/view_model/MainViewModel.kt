@@ -1,12 +1,28 @@
 package ru.systempla.sotdl_background_generator.view_model
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ru.systempla.sotdl_background_generator.model.Ancestry
 import ru.systempla.sotdl_background_generator.model.factories.FactoryGenerator
 import ru.systempla.sotdl_background_generator.model.human.HumanAncestry
 
 class MainViewModel : ViewModel() {
+    private val characterDesc: MutableLiveData<String> by lazy {
+        MutableLiveData().also {
+            loadCharacterDesc()
+        }
+    }
+
     lateinit var character : Ancestry
+
+    fun getCharacterDesc(): LiveData<String>{
+        return characterDesc
+    }
+
+    private fun loadCharacterDesc() {
+        
+    }
 
     fun generateCharacter(ancestryString : String){
         when (ancestryString) {
@@ -27,4 +43,5 @@ class MainViewModel : ViewModel() {
             .newFeature(humanFeaturesFactory.getFeatureGenerationTable("Religion"))
             .create()
     }
+
 }
