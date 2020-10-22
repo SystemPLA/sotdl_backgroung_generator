@@ -15,11 +15,11 @@ class ClockworkAppearanceGenerationTable : GenerationTable {
             in 9..12 -> "You have a mere suggestion of facial features."
             13, 14 -> "You appear well made and in good working condition."
             15, 16 -> "You have a stylized and ornate body."
-            17 -> "You have an ornate body festooned with etchings\n" +
+            17 -> "You have an ornate body festooned with etchings " +
                     "and ornamental jewels."
-            18 -> "You have an exquisite body festooned with\n" +
-                    "elaborate etchings and ornamental jewels, and\n" +
-                    "trimmed in precious metals. If dismantled, your\n" +
+            18 -> "You have an exquisite body festooned with " +
+                    "elaborate etchings and ornamental jewels, and " +
+                    "trimmed in precious metals. If dismantled, your " +
                     "body parts are worth ${DiceRoller.roll(6)} gc."
             else -> "!!! Error: Wrong input parameter !!!"
         }

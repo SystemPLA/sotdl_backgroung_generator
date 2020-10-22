@@ -16,29 +16,29 @@ class ClockworkBackgroundGenerationTable : GenerationTable {
             4 -> "Your maker treated you poorly. You escaped and fear your maker will find you."
             5 -> "Fire, plague, or monsters destroyed your home and you are the sole survivor."
             6 -> "You were stolen from the workshop where you were made and lived as a slave for ${DiceRoller.roll(6)} years."
-            7 -> "Goblins captured you and almost took you apart\n" +
-                    "for scrap materials. You have replaced your missing\n" +
-                    "components with bits of wood, old weapons, and\n" +
+            7 -> "Goblins captured you and almost took you apart " +
+                    "for scrap materials. You have replaced your missing " +
+                    "components with bits of wood, old weapons, and " +
                     "other rubbish."
-            8 -> "You were left to find your own way in the world\n" +
+            8 -> "You were left to find your own way in the world " +
                     "when your maker died."
             9 -> "You fell off a boat and spent 2 years walking to shore."
             10 -> "You worked to fulfill your purpose for ${DiceRoller.roll(6)} years."
-            11 -> "Choose a member of the group. That character\n" +
-                    "found you and turned your key. You owe that\n" +
+            11 -> "Choose a member of the group. That character " +
+                    "found you and turned your key. You owe that " +
                     "character a debt."
-            12 -> "You were one of ${DiceRoller.roll(6)} other clockworks made at the\n" +
+            12 -> "You were one of ${DiceRoller.roll(6)} other clockworks made at the " +
                     "same time. You hope to find them one day."
-            13 -> "You were made to be a translator. You can speak\n" +
+            13 -> "You were made to be a translator. You can speak " +
                     "one additional language."
-            14 -> "You were made to be a scribe. You know how to\n" +
+            14 -> "You were made to be a scribe. You know how to " +
                     "read and write the Common Tongue."
             15 -> "Your maker set you free to find your destiny."
-            16 -> "You can’t remember your past. You don’t know\n" +
-                    "where you came from or how you came to be where\n" +
+            16 -> "You can’t remember your past. You don’t know " +
+                    "where you came from or how you came to be where " +
                     "you are."
             17 -> "You built a lasting monument in your community."
-            18 -> "You found a cryptic message inside your body. You\n" +
+            18 -> "You found a cryptic message inside your body. You " +
                     "have not yet deciphered its meaning."
             19 -> "You have a sword grafted to one of your arms."
             20 -> "You came into money and start the game with ${DiceRoller.roll(6,2)} cp."

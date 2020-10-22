@@ -53,6 +53,14 @@ class MainViewModel : ViewModel() {
 
     private fun generateOrc() {
         val orcFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Orc")
+        character = ClockworkAncestry.Builder()
+            .setName("Test Character")
+            .newFeature(orcFeaturesFactory.getFeatureGenerationTable("Background"))
+            .newFeature(orcFeaturesFactory.getFeatureGenerationTable("Age"))
+            .newFeature(orcFeaturesFactory.getFeatureGenerationTable("Build"))
+            .newFeature(orcFeaturesFactory.getFeatureGenerationTable("Appearance"))
+            .newFeature(orcFeaturesFactory.getFeatureGenerationTable("Personality"))
+            .create()
     }
 
     private fun generateClockwork() {
