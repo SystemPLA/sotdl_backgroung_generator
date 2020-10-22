@@ -7,6 +7,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.systempla.sotdl_background_generator.model.Ancestry
+import ru.systempla.sotdl_background_generator.model.clockwork.ClockworkAncestry
 import ru.systempla.sotdl_background_generator.model.factories.FactoryGenerator
 import ru.systempla.sotdl_background_generator.model.human.HumanAncestry
 
@@ -28,9 +29,43 @@ class MainViewModel : ViewModel() {
     fun generateCharacter(ancestryString : String){
         when (ancestryString) {
             "Human" -> generateHuman()
+            "Clockwork" -> generateClockwork()
+            "Orc" -> generateOrc()
+            "Dwarf" -> generateDwarf()
+            "Goblin" -> generateGoblin()
+            "Changeling" -> generateChangeling()
             else -> {}
         }
         loadCharacterDesc()
+    }
+
+    private fun generateChangeling() {
+        val changelingFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Changeling")
+    }
+
+    private fun generateGoblin() {
+        val goblinFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Goblin")
+    }
+
+    private fun generateDwarf() {
+        val dwarfFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Dwarf")
+    }
+
+    private fun generateOrc() {
+        val orcFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Orc")
+    }
+
+    private fun generateClockwork() {
+        val clockworkFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Clockwork")
+        character = ClockworkAncestry.Builder()
+            .setName("Test Character")
+            .newFeature(clockworkFeaturesFactory.getFeatureGenerationTable("Background"))
+            .newFeature(clockworkFeaturesFactory.getFeatureGenerationTable("Age"))
+            .newFeature(clockworkFeaturesFactory.getFeatureGenerationTable("Appearance"))
+            .newFeature(clockworkFeaturesFactory.getFeatureGenerationTable("Purpose"))
+            .newFeature(clockworkFeaturesFactory.getFeatureGenerationTable("Form"))
+            .newFeature(clockworkFeaturesFactory.getFeatureGenerationTable("Personality"))
+            .create()
     }
 
     private fun generateHuman() {

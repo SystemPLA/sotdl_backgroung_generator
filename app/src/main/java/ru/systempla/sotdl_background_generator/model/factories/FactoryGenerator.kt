@@ -7,6 +7,11 @@ class FactoryGenerator() {
         fun getAncestryFeaturesFactory(factory: String) : AncestryFeaturesFactory =
             when (factory) {
                 "Human" -> HumanFeaturesFactory()
+                "Clockwork" -> ClockworkFeaturesFactory()
+                "Orc" -> OrcFeaturesFactory()
+                "Dwarf" -> DwarfFeaturesFactory()
+                "Goblin" -> GoblinFeaturesFactory()
+                "Changeling" -> ChangelingFeaturesFactory()
                 else -> NullAncestryFeaturesFactory()
             }
     }

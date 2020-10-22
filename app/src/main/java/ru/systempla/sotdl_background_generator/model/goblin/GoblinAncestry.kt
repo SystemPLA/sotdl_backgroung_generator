@@ -1,4 +1,4 @@
-package ru.systempla.sotdl_background_generator.model.human
+package ru.systempla.sotdl_background_generator.model.goblin
 
 import android.util.Log
 import ru.systempla.sotdl_background_generator.model.Ancestry
@@ -6,7 +6,7 @@ import ru.systempla.sotdl_background_generator.model.GenerationTable
 import ru.systempla.sotdl_background_generator.utiliities.DiceRoller
 import java.lang.StringBuilder
 
-class HumanAncestry private constructor(private var name : String = "-", private val features: Map<String, String>): Ancestry() {
+class GoblinAncestry private constructor(private var name : String = "-", private val features: Map<String, String>): Ancestry() {
 
     private constructor(builder: Builder) : this(builder.name, builder.features) {
         this.featuresMap = features
@@ -32,7 +32,7 @@ class HumanAncestry private constructor(private var name : String = "-", private
             return this
         }
 
-        fun create(): HumanAncestry = HumanAncestry(this)
+        fun create(): GoblinAncestry = GoblinAncestry(this)
     }
 
     override fun toString():String {

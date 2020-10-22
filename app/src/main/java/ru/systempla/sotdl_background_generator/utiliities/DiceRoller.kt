@@ -11,9 +11,9 @@ class DiceRoller {
             while (counter>0) {
                 sum += (1..type).random()
                 counter -= 1
-                Log.d("ROLLER_ROLL", "$sum")
+//                Log.d("ROLLER_ROLL", "$sum")
             }
-            Log.d("ROLLER_SUM", "$sum")
+//            Log.d("ROLLER_SUM", "$sum")
             return sum
         }
 
