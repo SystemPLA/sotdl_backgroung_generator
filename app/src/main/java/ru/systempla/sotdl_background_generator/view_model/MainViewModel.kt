@@ -7,6 +7,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.systempla.sotdl_background_generator.model.Ancestry
+import ru.systempla.sotdl_background_generator.model.changeling.ChangelingAncestry
 import ru.systempla.sotdl_background_generator.model.clockwork.ClockworkAncestry
 import ru.systempla.sotdl_background_generator.model.dwarf.DwarfAncestry
 import ru.systempla.sotdl_background_generator.model.factories.FactoryGenerator
@@ -43,6 +44,52 @@ class MainViewModel : ViewModel() {
 
     private fun generateChangeling() {
         val changelingFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Changeling")
+        character = ChangelingAncestry.Builder()
+            .setName("Test Character")
+            .newFeature(changelingFeaturesFactory.getFeatureGenerationTable("Background"))
+            .newFeature(changelingFeaturesFactory.getFeatureGenerationTable("Age"))
+            .newFeature(changelingFeaturesFactory.getFeatureGenerationTable("Appearance"))
+            .newFeature(changelingFeaturesFactory.getFeatureGenerationTable("Gender"))
+            .newFeature(changelingFeaturesFactory.getFeatureGenerationTable("Personality"))
+            .newFeature(changelingFeaturesFactory.getFeatureGenerationTable("Quirk"))
+            .create()
+
+        if (character.featuresMap["Apparent Ancestry"]!!.contains("orc")) {
+            val orcFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Orc")
+            character = ChangelingAncestry.Builder(character)
+                .newFeature(orcFeaturesFactory.getFeatureGenerationTable("Age"))
+                .newFeature(orcFeaturesFactory.getFeatureGenerationTable("Build"))
+                .newFeature(orcFeaturesFactory.getFeatureGenerationTable("Appearance"))
+                .create()
+        }
+
+        if (character.featuresMap["Apparent Ancestry"]!!.contains("goblin")) {
+            val goblinFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Goblin")
+            character = ChangelingAncestry.Builder(character)
+                .newFeature(goblinFeaturesFactory.getFeatureGenerationTable("Age"))
+                .newFeature(goblinFeaturesFactory.getFeatureGenerationTable("Build"))
+                .newFeature(goblinFeaturesFactory.getFeatureGenerationTable("Appearance"))
+                .create()
+        }
+
+        if (character.featuresMap["Apparent Ancestry"]!!.contains("dwarf")) {
+            val dwarfFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Dwarf")
+            character = ChangelingAncestry.Builder(character)
+                .newFeature(dwarfFeaturesFactory.getFeatureGenerationTable("Age"))
+                .newFeature(dwarfFeaturesFactory.getFeatureGenerationTable("Build"))
+                .newFeature(dwarfFeaturesFactory.getFeatureGenerationTable("Appearance"))
+                .create()
+        }
+
+        if (character.featuresMap["Apparent Ancestry"]!!.contains("human")) {
+            val humanFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Human")
+            character = ChangelingAncestry.Builder(character)
+                .newFeature(humanFeaturesFactory.getFeatureGenerationTable("Age"))
+                .newFeature(humanFeaturesFactory.getFeatureGenerationTable("Build"))
+                .newFeature(humanFeaturesFactory.getFeatureGenerationTable("Appearance"))
+                .create()
+        }
+
     }
 
     private fun generateGoblin() {

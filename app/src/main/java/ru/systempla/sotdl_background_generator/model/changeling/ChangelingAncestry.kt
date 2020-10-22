@@ -1,6 +1,5 @@
 package ru.systempla.sotdl_background_generator.model.changeling
 
-import android.util.Log
 import ru.systempla.sotdl_background_generator.model.Ancestry
 import ru.systempla.sotdl_background_generator.model.GenerationTable
 import ru.systempla.sotdl_background_generator.utiliities.DiceRoller
@@ -13,9 +12,14 @@ class ChangelingAncestry private constructor(private var name : String = "-", pr
         this.characterName = name
     }
 
-    class Builder{
+    class Builder(){
         var features: LinkedHashMap<String, String> = LinkedHashMap()
         var name: String = ""
+
+        constructor(ancestry: Ancestry) : this() {
+            features = ancestry.featuresMap as LinkedHashMap<String, String>
+            name = ancestry.characterName
+        }
 
         fun newFeature(featureGenerationTable : GenerationTable) : Builder {
             features[featureGenerationTable.name] =

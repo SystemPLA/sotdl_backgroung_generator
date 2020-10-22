@@ -20,6 +20,6 @@ class MainActivity : AppCompatActivity() {
             data -> editTextTextMultiLine.setText(data)
         })
 
-        ge_bt.setOnClickListener { mainViewModel.generateCharacter("Goblin") }
+        ge_bt.setOnClickListener { mainViewModel.generateCharacter("Changeling") }
     }
 }
