@@ -10,6 +10,7 @@ import ru.systempla.sotdl_background_generator.model.Ancestry
 import ru.systempla.sotdl_background_generator.model.clockwork.ClockworkAncestry
 import ru.systempla.sotdl_background_generator.model.dwarf.DwarfAncestry
 import ru.systempla.sotdl_background_generator.model.factories.FactoryGenerator
+import ru.systempla.sotdl_background_generator.model.goblin.GoblinAncestry
 import ru.systempla.sotdl_background_generator.model.human.HumanAncestry
 
 class MainViewModel : ViewModel() {
@@ -46,6 +47,15 @@ class MainViewModel : ViewModel() {
 
     private fun generateGoblin() {
         val goblinFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Goblin")
+        character = GoblinAncestry.Builder()
+            .setName("Test Character")
+            .newFeature(goblinFeaturesFactory.getFeatureGenerationTable("Background"))
+            .newFeature(goblinFeaturesFactory.getFeatureGenerationTable("Age"))
+            .newFeature(goblinFeaturesFactory.getFeatureGenerationTable("Appearance"))
+            .newFeature(goblinFeaturesFactory.getFeatureGenerationTable("Build"))
+            .newFeature(goblinFeaturesFactory.getFeatureGenerationTable("Personality"))
+            .newFeature(goblinFeaturesFactory.getFeatureGenerationTable("Habit"))
+            .create()
     }
 
     private fun generateDwarf() {
