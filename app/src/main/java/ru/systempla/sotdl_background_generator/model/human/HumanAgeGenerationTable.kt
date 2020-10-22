@@ -12,7 +12,7 @@ class HumanAgeGenerationTable : GenerationTable {
             in 8..12 -> "You are a young adult, ${(18..35).random()} years old."
             in 13..15 -> "You are a middle-aged adult, ${(36..55).random()} years old."
             16,17 -> "You are an older adult, ${(56..75).random()} years old."
-            18 -> "You are a venerable adult, ${(76..90).random()} years or older."
+            18 -> "You are a venerable adult, ${(76..90).random()} years old."
             else -> "!!! Error: Wrong input parameter !!!"
         }
     }
