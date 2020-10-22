@@ -8,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import ru.systempla.sotdl_background_generator.model.Ancestry
 import ru.systempla.sotdl_background_generator.model.clockwork.ClockworkAncestry
+import ru.systempla.sotdl_background_generator.model.dwarf.DwarfAncestry
 import ru.systempla.sotdl_background_generator.model.factories.FactoryGenerator
 import ru.systempla.sotdl_background_generator.model.human.HumanAncestry
 
@@ -49,6 +50,15 @@ class MainViewModel : ViewModel() {
 
     private fun generateDwarf() {
         val dwarfFeaturesFactory = FactoryGenerator.getAncestryFeaturesFactory("Dwarf")
+        character = DwarfAncestry.Builder()
+            .setName("Test Character")
+            .newFeature(dwarfFeaturesFactory.getFeatureGenerationTable("Background"))
+            .newFeature(dwarfFeaturesFactory.getFeatureGenerationTable("Age"))
+            .newFeature(dwarfFeaturesFactory.getFeatureGenerationTable("Appearance"))
+            .newFeature(dwarfFeaturesFactory.getFeatureGenerationTable("Build"))
+            .newFeature(dwarfFeaturesFactory.getFeatureGenerationTable("Personality"))
+            .newFeature(dwarfFeaturesFactory.getFeatureGenerationTable("Hatred"))
+            .create()
     }
 
     private fun generateOrc() {
