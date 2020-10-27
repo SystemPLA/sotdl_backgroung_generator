@@ -7,6 +7,8 @@ import java.lang.StringBuilder
 
 class ChangelingAncestry private constructor(private var name : String = "-", private val features: Map<String, String>): Ancestry() {
 
+    val ancestry = "Changeling"
+
     private constructor(builder: Builder) : this(builder.name, builder.features) {
         this.featuresMap = features
         this.characterName = name
@@ -42,6 +44,7 @@ class ChangelingAncestry private constructor(private var name : String = "-", pr
     override fun toString():String {
         var result: StringBuilder = StringBuilder()
         result.append("Name: $name \n")
+        result.append("Ancestry: $ancestry \n")
         for (i in featuresMap) {
             result.append("${i.key}: ${i.value} \n")
         }

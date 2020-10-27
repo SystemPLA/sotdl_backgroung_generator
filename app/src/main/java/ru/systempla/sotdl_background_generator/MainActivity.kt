@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import ru.systempla.sotdl_background_generator.databinding.ActivityMainBinding
+import ru.systempla.sotdl_background_generator.model.Ancestries
 import ru.systempla.sotdl_background_generator.view_model.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,6 @@ class MainActivity : AppCompatActivity() {
             data -> editTextTextMultiLine.setText(data)
         })
 
-        ge_bt.setOnClickListener { mainViewModel.generateCharacter("Changeling") }
+        ge_bt.setOnClickListener { mainViewModel.generateCharacter(Ancestries.RANDOM) }
     }
 }

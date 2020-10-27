@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import ru.systempla.sotdl_background_generator.model.Ancestries
 import ru.systempla.sotdl_background_generator.model.Ancestry
 import ru.systempla.sotdl_background_generator.model.changeling.ChangelingAncestry
 import ru.systempla.sotdl_background_generator.model.clockwork.ClockworkAncestry
@@ -29,17 +30,25 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    fun generateCharacter(ancestryString : String){
-        when (ancestryString) {
-            "Human" -> generateHuman()
-            "Clockwork" -> generateClockwork()
-            "Orc" -> generateOrc()
-            "Dwarf" -> generateDwarf()
-            "Goblin" -> generateGoblin()
-            "Changeling" -> generateChangeling()
-            else -> {}
-        }
+    fun generateCharacter(ancestryString : Ancestries){
+        generateAncestry(ancestryString)
         loadCharacterDesc()
+    }
+
+    private fun generateAncestry(ancestryString: Ancestries) {
+        when (ancestryString) {
+            Ancestries.HUMAN -> generateHuman()
+            Ancestries.CLOCKWORK -> generateClockwork()
+            Ancestries.ORC-> generateOrc()
+            Ancestries.DWARF -> generateDwarf()
+            Ancestries.GOBLIN -> generateGoblin()
+            Ancestries.CHANGELING -> generateChangeling()
+            Ancestries.RANDOM-> generateRandomAncestry()
+        }
+    }
+
+    private fun generateRandomAncestry() {
+        generateAncestry(Ancestries.values().random())
     }
 
     private fun generateChangeling() {
