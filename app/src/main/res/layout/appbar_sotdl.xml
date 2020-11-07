@@ -9,22 +9,25 @@
         android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/toolbar_image"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="40dp"
-                android:src="@drawable/red_logo_transparent" />
+                android:src="@drawable/red_logo_transparent"
+                android:background="@android:color/transparent"/>
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/main_toolbar"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@color/colorPrimary"
             android:elevation="0dp"
-            android:layout_gravity="start"
-            app:layout_collapseMode="pin">
+            android:layout_gravity="start">
 
             <TextView
+                android:id="@+id/toolbar_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="sans-serif-medium"
