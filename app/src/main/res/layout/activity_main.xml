@@ -1,71 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.SotDL.Background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryDark"
+    app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity"
-    tools:showPaths="true"
-    app:layoutDescription="@xml/activity_main_scene">
-
-<!--   <include layout="@layout/appbar_sotdl"-->
-<!--       android:id="@+id/app_bar_layout"-->
-<!--       app:layout_constraintStart_toStartOf="parent"-->
-<!--       app:layout_constraintEnd_toEndOf="parent"-->
-<!--       app:layout_constraintTop_toTopOf="parent"/>-->
-
-<!--   <com.google.android.material.appbar.AppBarLayout-->
-<!--       android:id="@+id/app_bar_layout"-->
-<!--       style="@style/Widget.SotDL.ActionBar"-->
-<!--       android:layout_width="match_parent"-->
-<!--       android:layout_height="wrap_content"-->
-<!--       app:layout_constraintStart_toStartOf="parent"-->
-<!--       app:layout_constraintEnd_toEndOf="parent"-->
-<!--       app:layout_constraintTop_toTopOf="parent">-->
-
+    tools:showPaths="true">
 
     <FrameLayout
         android:id="@+id/main_toolbar"
+        style="@style/Widget.SotDL.MainToolbar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/main_toolbar_height"
         android:background="@color/colorPrimary"
-        tools:layout_editor_absoluteY="2dp"/>
+        tools:layout_editor_absoluteY="2dp" />
 
     <TextView
         android:id="@+id/main_toolbar_text"
+        style="@style/Widget.SotDL.MainToolbarText"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:fontFamily="sans-serif-medium"
-        android:gravity="center"
-        android:text="CHOOSE YOUR ANCESTRY"
-        android:textColor="@color/textBright"
-        android:textSize="25dp"/>
+        android:layout_height="@dimen/main_toolbar_text_ly_height"
+        android:text="@string/main_toolbar_text"/>
 
     <ImageView
         android:id="@+id/toolbar_image"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="40dp"
-        android:src="@drawable/red_logo_transparent"
+        android:layout_height="@dimen/toolbar_image_height"
+        android:layout_marginTop="@dimen/toolbar_image_margin_top"
+        android:layout_marginBottom="@dimen/toolbar_image_margin_bottom"
+        android:adjustViewBounds="true"
         android:background="@android:color/transparent"
-        android:adjustViewBounds="true"/>
+        android:src="@drawable/red_logo_transparent" />
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/scroll_view_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/main_toolbar">
 
         <fragment
-            android:name="ru.systempla.sotdl_background_generator.FakeFragment"
             android:id="@+id/main_fragment_container"
+            android:name="ru.systempla.sotdl_background_generator.FakeFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

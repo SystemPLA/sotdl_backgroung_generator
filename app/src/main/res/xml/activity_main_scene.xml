@@ -18,23 +18,23 @@
         <Constraint
             android:id="@id/toolbar_image"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="@dimen/toolbar_image_height"
+            android:layout_marginTop="@dimen/toolbar_image_margin_top"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <Constraint
             android:id="@id/main_toolbar"
-            android:layout_height="70dp"
+            android:layout_height="@dimen/main_toolbar_ly_height_expanded"
             android:layout_width="match_parent"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="@dimen/main_toolbar_margin_top_expanded"
             app:layout_constraintTop_toBottomOf="@id/toolbar_image"/>
 
         <Constraint
             android:id="@id/main_toolbar_text"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="@dimen/main_toolbar_text_ly_height_expanded"
             android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,24 +47,24 @@
 
         <Constraint
             android:id="@+id/toolbar_image"
-            android:layout_marginTop="10dp"
-            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/toolbar_image_margin_top_collapsed"
+            android:layout_height="@dimen/toolbar_image_ly_height_collapsed"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="@dimen/toolbar_image_margin_start_collapsed"/>
 
         <Constraint
             android:id="@id/main_toolbar"
-            android:layout_height="70dp"
+            android:layout_height="@dimen/main_toolbar_ly_height_collapsed"
             android:layout_width="match_parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <Constraint
             android:id="@id/main_toolbar_text"
             android:layout_width="wrap_content"
-            android:layout_height="70dp"
+            android:layout_height="@dimen/main_toolbar_text_ly_height_collapsed"
             android:gravity="end"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/main_toolbar_text_margin_end_collapsed"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/main_toolbar"
             app:layout_constraintTop_toTopOf="@id/main_toolbar"/>

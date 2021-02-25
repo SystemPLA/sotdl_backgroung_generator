@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_toolbar_height">70dp</dimen>
+    <dimen name="main_toolbar_text_size">25sp</dimen>
+    <dimen name="scroll_view_height">0dp</dimen>
+    <dimen name="toolbar_image_height">100dp</dimen>
+    <dimen name="toolbar_image_margin_top">30dp</dimen>
+    <dimen name="toolbar_image_margin_bottom">40dp</dimen>
+    <dimen name="main_toolbar_margin_top_expanded">40dp</dimen>
+    <dimen name="main_toolbar_ly_height_expanded">70dp</dimen>
+    <dimen name="toolbar_image_margin_top_collapsed">10dp</dimen>
+    <dimen name="toolbar_image_ly_height_collapsed">50dp</dimen>
+    <dimen name="toolbar_image_margin_start_collapsed">8dp</dimen>
+    <dimen name="main_toolbar_ly_height_collapsed">70dp</dimen>
+    <dimen name="main_toolbar_text_ly_height_collapsed">70dp</dimen>
+    <dimen name="main_toolbar_text_ly_height">70dp</dimen>
+    <dimen name="main_toolbar_text_margin_end_collapsed">8dp</dimen>
+    <dimen name="main_toolbar_text_ly_height_expanded">70dp</dimen>
+</resources>
